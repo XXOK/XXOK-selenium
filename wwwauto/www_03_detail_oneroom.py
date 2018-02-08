@@ -138,7 +138,7 @@ class detail_oneroomTest(unittest.TestCase):
 
                 # 7. 테스트 매물 상세 진입
 
-                self.driver.execute_script('''window.open("https://www.zigbang.com/items1/10171903","_blank");''')
+                self.driver.execute_script('''window.open("https://www.zigbang.com/items1/10171899","_blank");''')
 
                 self.moveTab(1)
 
