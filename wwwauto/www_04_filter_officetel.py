@@ -29,7 +29,7 @@ class filter_officetelTest(unittest.TestCase):
         return time.sleep(2)
 
     def setUp(self):
-        self.chromeDriver = os.path.abspath('../zigbang_web_monitoring/driver/chromedriver')
+        self.chromeDriver = PATH('../driver/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver) #chrome_options=options
         self.wait = WebDriverWait(self.driver, 5)
 
