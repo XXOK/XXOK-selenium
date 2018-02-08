@@ -5,7 +5,6 @@ import pytest
 
 
 # 원룸 테스트
-
 from wwwauto.www_01_main import mainTest
 from wwwauto.www_02_filter_oneroom import filter_oneroomTest
 from wwwauto.www_03_detail_oneroom import detail_oneroomTest

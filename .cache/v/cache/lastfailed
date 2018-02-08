@@ -1,0 +1,16 @@
+{
+  "wwwauto/test_suite.py::agent_zzimTest::runTest": true,
+  "wwwauto/test_suite.py::apart_detail_aptTest::runTest": true,
+  "wwwauto/test_suite.py::detail_officetelTest::runTest": true,
+  "wwwauto/test_suite.py::detail_oneroomTest::runTest": true,
+  "wwwauto/test_suite.py::filter_officetelTest::runTest": true,
+  "wwwauto/test_suite.py::filter_oneroomTest::runTest": true,
+  "wwwauto/test_suite.py::filter_rent_aptTest::runTest": true,
+  "wwwauto/test_suite.py::filter_sale_aptTest::runTest": true,
+  "wwwauto/test_suite.py::item_detail_aptTest::runTest": true,
+  "wwwauto/test_suite.py::item_map_aptTest::runTest": true,
+  "wwwauto/test_suite.py::item_zzimTest::runTest": true,
+  "wwwauto/test_suite.py::item_zzim_aptTest::runTest": true,
+  "wwwauto/test_suite.py::mainTest::runTest": true,
+  "wwwauto/test_suite.py::my_roomsTest::runTest": true
+}

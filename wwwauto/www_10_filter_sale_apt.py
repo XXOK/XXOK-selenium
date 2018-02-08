@@ -15,6 +15,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 
+PATH = lambda p: os.path.abspath(
+    os.path.join(os.path.dirname(__file__), p)
+)
+
 class filter_sale_aptTest(unittest.TestCase):
 
     def __init__(self, x):
@@ -27,7 +31,7 @@ class filter_sale_aptTest(unittest.TestCase):
         return time.sleep(2)
 
     def setUp(self):
-        self.chromeDriver = os.path.abspath('../zigbang_web_monitoring/driver/chromedriver')
+        self.chromeDriver = PATH('../driver/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver)
         self.wait = WebDriverWait(self.driver, 5)
 
