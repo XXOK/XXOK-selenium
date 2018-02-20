@@ -38,7 +38,7 @@ class detail_oneroomTest(unittest.TestCase):
         count = 0
         while True:
             try:
-                zigbangUrl = "http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/"
+                zigbangUrl = "https://www.zigbang.com/"
 
                 confirmAccount = "dustls456@naver.com"
                 confirmpwAccount = "asd12345@"
@@ -138,7 +138,7 @@ class detail_oneroomTest(unittest.TestCase):
 
                 # 7. 테스트 매물 상세 진입
 
-                # self.driver.execute_script('''window.open("http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/items1/10171899","_blank");''')
+                # self.driver.execute_script('''window.open("https://www.zigbang.com/items1/10171899","_blank");''')
                 #
                 # self.moveTab(1)
 

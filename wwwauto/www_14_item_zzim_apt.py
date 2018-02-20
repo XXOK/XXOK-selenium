@@ -35,7 +35,7 @@ class item_zzim_aptTest(unittest.TestCase):
         count = 0
         while True:
             try:
-                zigbangUrl = "http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/"
+                zigbangUrl = "https://www.zigbang.com/"
 
                 # 0. 직방 웹페이지 접속
 
