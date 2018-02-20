@@ -35,7 +35,7 @@ class item_zzimTest(unittest.TestCase):
         count = 0
         while True:
             try:
-                zigbangUrl = "https://www.zigbang.com/"
+                zigbangUrl = "http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/"
 
                 confirmAccount = "dustls456@naver.com"
                 confirmpwAccount = "asd12345@"

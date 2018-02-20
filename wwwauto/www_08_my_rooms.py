@@ -35,7 +35,7 @@ class my_roomsTest(unittest.TestCase):
         count = 0
         while True:
             try:
-                zigbangUrl = "https://www.zigbang.com/"
+                zigbangUrl = "http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/"
 
                 confirmAccount = "dustls456@naber.com"
                 confirmpwAccount = "asd12345"

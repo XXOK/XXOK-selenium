@@ -39,7 +39,7 @@ class filter_rent_aptTest(unittest.TestCase):
         count = 0
         while True:
             try:
-                zigbangUrl = "https://www.zigbang.com/"
+                zigbangUrl = "http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/"
 
                 # 0. 직방 웹페이지 접속
 

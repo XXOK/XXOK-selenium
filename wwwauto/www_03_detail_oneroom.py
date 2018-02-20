@@ -38,7 +38,7 @@ class detail_oneroomTest(unittest.TestCase):
         count = 0
         while True:
             try:
-                zigbangUrl = "https://www.zigbang.com/"
+                zigbangUrl = "http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/"
 
                 confirmAccount = "dustls456@naver.com"
                 confirmpwAccount = "asd12345@"
@@ -138,8 +138,18 @@ class detail_oneroomTest(unittest.TestCase):
 
                 # 7. 테스트 매물 상세 진입
 
-                self.driver.execute_script('''window.open("https://www.zigbang.com/items1/10171899","_blank");''')
+                # self.driver.execute_script('''window.open("http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/items1/10171899","_blank");''')
+                #
+                # self.moveTab(1)
 
+                self.wait.until(EC.visibility_of_element_located((By.ID, "rooms-textfield"))).send_keys(u"인천시 강화군 서도면")
+                time.sleep(1)
+
+                self.wait.until(EC.visibility_of_element_located((By.ID, "btn-room-search"))).click()
+                time.sleep(3)
+
+                listItem = self.wait.until(EC.visibility_of_all_elements_located((By.CLASS_NAME, "list-item ")))
+                listItem[0].click()
                 self.moveTab(1)
 
                 # 8. 연락처 보기 / 문자 보내기

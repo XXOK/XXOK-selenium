@@ -36,7 +36,7 @@ class detail_officetelTest(unittest.TestCase):
         count = 0
         while True:
             try:
-                zigbangUrl = "https://www.zigbang.com/"
+                zigbangUrl = "http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/"
 
                 confirmAccount = "dustls456@naver.com"
                 confirmpwAccount = "asd12345@"
@@ -146,8 +146,21 @@ class detail_officetelTest(unittest.TestCase):
 
                 # 8. 테스트 매물 상세 진입
 
-                self.driver.execute_script('''window.open("https://www.zigbang.com/items1/10167786","_blank");''')
+                # self.driver.execute_script('''window.open("http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/items1/10167786","_blank");''')
+                #
+                # self.moveTab(1)
 
+                self.wait.until(EC.visibility_of_element_located((By.ID, "officetel-textfield"))).send_keys(u"직방테스트오피스텔")
+                time.sleep(1)
+
+                self.wait.until(EC.visibility_of_element_located((By.ID, "btn-officetel-search"))).click()
+                time.sleep(3)
+
+                self.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "list-close"))).click()
+                time.sleep(1)
+
+                listItem = self.wait.until(EC.visibility_of_all_elements_located((By.CLASS_NAME, "list-item ")))
+                listItem[0].click()
                 self.moveTab(1)
 
                 # 9. 연락처 보기 / 문자 보내기

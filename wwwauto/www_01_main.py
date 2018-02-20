@@ -35,7 +35,7 @@ class mainTest(unittest.TestCase):
         count = 0
         while True:
             try:
-                zigbangUrl = "https://www.zigbang.com/"
+                zigbangUrl = "http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/"
 
                 illbanidAccount = "dustls456@zaver.com"
                 confirmAccount = "dustls456@naver.com"
@@ -202,7 +202,7 @@ class mainTest(unittest.TestCase):
 
                 self.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "m-tv"))).click()
 
-                if not "https://www.zigbang.com/home/RegisterInfo" == self.driver.current_url :
+                if not "http://zigbang-www2.ecqnug3usp.ap-northeast-1.elasticbeanstalk.com/home/RegisterInfo" == self.driver.current_url :
                     raise Exception(u"CEO 페이지 링크가 잘못되었습니다")
                     # 이동 된 페이지 링크 검사
 
