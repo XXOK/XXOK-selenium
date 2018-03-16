@@ -225,7 +225,6 @@ class mainTest(unittest.TestCase):
 
             except Exception:
 
-                self.helper.screen_capture()
 
                 if count == 2:
                     raise
