@@ -10,6 +10,7 @@ import sys, traceback
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from wwwauto.helper import helper
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -30,6 +31,7 @@ class mainTest(unittest.TestCase):
         self.chromeDriver = PATH('../driver/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver)
         self.wait = WebDriverWait(self.driver, 5)
+        self.helper = helper(self)
 
     def runTest(self):
         count = 0
@@ -223,6 +225,8 @@ class mainTest(unittest.TestCase):
 
             except Exception:
 
+                self.helper.screen_capture()
+
                 if count == 2:
                     raise
 
@@ -232,6 +236,7 @@ class mainTest(unittest.TestCase):
                     self.driver.quit()
                     self.setUp()
                     count += 1
+
 
     def tearDown(self):
         self.driver.quit()
