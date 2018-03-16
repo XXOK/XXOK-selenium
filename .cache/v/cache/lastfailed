@@ -1,4 +1,3 @@
 {
-  "wwwauto/test_suite.py::filter_oneroomTest::runTest": true,
-  "wwwauto/test_suite.py::mainTest::runTest": true
+  "wwwauto/test_suite.py::filter_rent_aptTest::runTest": true
 }
