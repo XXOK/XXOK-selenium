@@ -7,10 +7,12 @@ import pdb
 import pytest
 import unittest
 import sys, traceback
+import platform
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from wwwauto.helper import helper
+
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -28,7 +30,10 @@ class mainTest(unittest.TestCase):
         return time.sleep(2)
 
     def setUp(self):
-        self.chromeDriver = PATH('../driver/chromedriver')
+        if platform.system() == 'Darwin' :
+            self.chromeDriver = PATH('../drivers/mac/chromedriver')
+        else :
+            self.chromeDriver = PATH('../drivers/win/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver)
         self.wait = WebDriverWait(self.driver, 5)
         self.helper = helper(self)
@@ -63,7 +68,7 @@ class mainTest(unittest.TestCase):
 
                 self.wait.until(EC.visibility_of_element_located((By.XPATH, "//button[@class='btn btn-ok']"))).click()
 
-                userName = self.wait.until(EC.visibility_of_element_located((By.XPATH, "//button[@class='i_user']"))).text
+                userName = self.wait.until(EC.visibility_of_element_located((By.XPATH, "//button[@class='i_user2']"))).text
 
                 if not u"강연신" == userName:
                     raise Exception(u"사용자 이름이 일치하지 않습니다.", userName)

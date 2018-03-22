@@ -1,3 +1,5 @@
 {
-  "wwwauto/test_suite.py::filter_rent_aptTest::runTest": true
+  "wwwauto/test_suite.py::agent_zzimTest::runTest": true,
+  "wwwauto/test_suite.py::detail_officetelTest::runTest": true,
+  "wwwauto/test_suite.py::mainTest::runTest": true
 }
