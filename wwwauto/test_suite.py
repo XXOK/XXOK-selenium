@@ -8,13 +8,13 @@ import platform
 # 원룸 테스트
 
 from wwwauto.www_01_main import mainTest
-from wwwauto.www_02_filter_oneroom import filter_oneroomTest
-from wwwauto.www_03_detail_oneroom import detail_oneroomTest
-from wwwauto.www_04_filter_officetel import filter_officetelTest
-from wwwauto.www_05_detail_officetel import detail_officetelTest
-from wwwauto.www_06_item_zzim import item_zzimTest
-from wwwauto.www_07_agent_zzim import agent_zzimTest
-from wwwauto.www_08_my_rooms import my_roomsTest
+# from wwwauto.www_02_filter_oneroom import filter_oneroomTest
+# from wwwauto.www_03_detail_oneroom import detail_oneroomTest
+# from wwwauto.www_04_filter_officetel import filter_officetelTest
+# from wwwauto.www_05_detail_officetel import detail_officetelTest
+# from wwwauto.www_06_item_zzim import item_zzimTest
+# from wwwauto.www_07_agent_zzim import agent_zzimTest
+# from wwwauto.www_08_my_rooms import my_roomsTest
 
 # 아파트 테스트
 
