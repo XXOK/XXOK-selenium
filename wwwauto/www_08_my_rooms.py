@@ -3,13 +3,14 @@
 from selenium import webdriver
 import os
 import time
-import pytest
 import unittest
 import sys, traceback
+import platform
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains
+from wwwauto.helper import helper
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -27,9 +28,13 @@ class my_roomsTest(unittest.TestCase):
         return time.sleep(2)
 
     def setUp(self):
-        self.chromeDriver = PATH('../driver/chromedriver')
+        if platform.system() == 'Darwin' :
+            self.chromeDriver = PATH('../drivers/mac/chromedriver')
+        else :
+            self.chromeDriver = PATH('../drivers/win/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver)
         self.wait = WebDriverWait(self.driver, 5)
+        self.helper = helper(self)
 
     def runTest(self):
         count = 0
@@ -210,6 +215,7 @@ class my_roomsTest(unittest.TestCase):
                     raise
 
                 else:
+                    helper.screen_capture(self.helper)
                     traceback.print_exc(file=sys.stdout)
                     print("에러 발생 페이지 URL : ", self.driver.current_url)
                     self.driver.quit()

@@ -4,16 +4,16 @@ from selenium import webdriver
 import os
 import time
 import pdb
-import pytest
 import unittest
 import sys, traceback
+import platform
 import re
 import random
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
+from wwwauto.helper import helper
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -31,9 +31,13 @@ class filter_rent_aptTest(unittest.TestCase):
         return time.sleep(2)
 
     def setUp(self):
-        self.chromeDriver = PATH('../driver/chromedriver')
+        if platform.system() == 'Darwin' :
+            self.chromeDriver = PATH('../drivers/mac/chromedriver')
+        else :
+            self.chromeDriver = PATH('../drivers/win/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver)
         self.wait = WebDriverWait(self.driver, 5)
+        self.helper = helper(self)
 
     def runTest(self):
         count = 0
