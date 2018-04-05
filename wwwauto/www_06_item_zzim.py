@@ -42,8 +42,8 @@ class item_zzimTest(unittest.TestCase):
             try:
                 zigbangUrl = "https://www.zigbang.com/"
 
-                confirmAccount = "dustls456@naver.com"
-                confirmpwAccount = "asd12345@"
+                confirmAccount = "인증 계정"
+                confirmpwAccount = "인증 계정"
 
                 # 0. 직방 웹페이지 접속
 

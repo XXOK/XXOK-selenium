@@ -42,11 +42,11 @@ class mainTest(unittest.TestCase):
             try:
                 zigbangUrl = "https://www.zigbang.com/"
 
-                illbanidAccount = "dustls456@zaver.com"
-                confirmAccount = "dustls456@naver.com"
-                confirmpwAccount = "asd12345@"
-                agentAccount = "test0055@zigbang.com"
-                agentpwAccount = "asd12345!"
+                illbanidAccount = "미인증 계정"
+                confirmAccount = "인증 계정"
+                confirmpwAccount = "인증 계정"
+                agentAccount = "중개사 계정"
+                agentpwAccount = "중개사 계정"
 
                 # 0. 직방 웹페이지 접속
 
@@ -89,7 +89,7 @@ class mainTest(unittest.TestCase):
 
                 userName = self.wait.until(EC.visibility_of_element_located((By.XPATH, "//button[@class='i_user']"))).text
 
-                if not u"강연신" == userName:
+                if not u"사용자 계정" == userName:
                     raise Exception(u"사용자 이름이 일치하지 않습니다.", userName)
 
                 self.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "i_user"))).click()
@@ -146,14 +146,14 @@ class mainTest(unittest.TestCase):
 
                 # 6. 원,투룸 오피스텔 검색
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "room-textfield"))).send_keys(u'직방테스트오피스텔')
+                self.wait.until(EC.visibility_of_element_located((By.ID, "room-textfield"))).send_keys(u'테스트할 오피스텔명')
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "search_btn"))).click()
                 time.sleep(1)
 
                 offiName = self.wait.until(EC.visibility_of_all_elements_located((By.XPATH, "//div[@class='list-title']")))[0].text[0:9]
 
-                if not u"직방테스트오피스텔" == offiName:
+                if not u"테스트할 오피스텔명" == offiName:
                     raise Exception(u"오피스텔명이 일치하지 않습니다.", offiName)
 
                 self.driver.execute_script("window.history.go(-1)")
@@ -188,14 +188,14 @@ class mainTest(unittest.TestCase):
 
                 # 9. 아파트 명 검색
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "room-textfield"))).send_keys(u'직방테스트1')
+                self.wait.until(EC.visibility_of_element_located((By.ID, "room-textfield"))).send_keys(u'테스트할 아파트명')
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "search_btn"))).click()
                 time.sleep(1)
 
                 aptName = self.wait.until(EC.visibility_of_element_located((By.XPATH, "//div[@class='i-tit']"))).text[0:6]
 
-                if not u'직방테스트1' == aptName:
+                if not u'테스트할 아파트명' == aptName:
                     raise Exception(u"아파트명이 일치하지 않습니다.", aptName)
 
                 self.driver.execute_script("window.history.go(-1)")

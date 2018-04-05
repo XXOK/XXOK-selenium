@@ -55,7 +55,7 @@ class item_detail_aptTest(unittest.TestCase):
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "tit_apartments"))).click()
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "room-textfield"))).send_keys(u'직방테스트5')
+                self.wait.until(EC.visibility_of_element_located((By.ID, "room-textfield"))).send_keys(u'테스트할 아파트 명')
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "search_btn"))).click()
                 time.sleep(1)
@@ -88,9 +88,9 @@ class item_detail_aptTest(unittest.TestCase):
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "btn_contact_agent"))).click()
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "phone"))).send_keys("01076883453")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "phone"))).send_keys("테스트 휴대폰 번호")
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "comment"))).send_keys(u"WWW_Test Automation_강연신(1)")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "comment"))).send_keys(u"테스트 문자 내용")
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "btn-inquiry"))).click()
 
@@ -120,9 +120,9 @@ class item_detail_aptTest(unittest.TestCase):
 
                 self.driver.find_elements_by_css_selector("button[class='btn-close icon-x2']")[1].click()
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "phone2"))).send_keys("01076883453")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "phone2"))).send_keys("테스트 휴대폰 번호")
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "comment2"))).send_keys(u"WWW_Test Automation_강연신(2)")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "comment2"))).send_keys(u"테스트 문자 내용")
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "btn-inquiry2"))).click()
 

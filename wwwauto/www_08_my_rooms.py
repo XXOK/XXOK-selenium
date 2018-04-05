@@ -42,9 +42,9 @@ class my_roomsTest(unittest.TestCase):
             try:
                 zigbangUrl = "https://www.zigbang.com/"
 
-                confirmAccount = "dustls456@naber.com"
-                confirmpwAccount = "asd12345"
-                wording = u"QA파트 자동화 테스트 (실제 매물이 아닙니다)"
+                confirmAccount = "인증 계정"
+                confirmpwAccount = "인증 계정"
+                wording = u"테스트 워딩"
 
                 # 0. 직방 웹페이지 접속
 

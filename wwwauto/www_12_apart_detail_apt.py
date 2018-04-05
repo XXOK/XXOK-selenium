@@ -54,7 +54,7 @@ class apart_detail_aptTest(unittest.TestCase):
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "tit_apartments"))).click()
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "room-textfield"))).send_keys(u'직방테스트1')
+                self.wait.until(EC.visibility_of_element_located((By.ID, "room-textfield"))).send_keys(u'테스트할 아파트 명')
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "search_btn"))).click()
                 time.sleep(1)

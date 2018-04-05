@@ -43,8 +43,8 @@ class detail_oneroomTest(unittest.TestCase):
             try:
                 zigbangUrl = "https://www.zigbang.com/"
 
-                confirmAccount = "dustls456@naver.com"
-                confirmpwAccount = "asd12345@"
+                confirmAccount = "인증 계정"
+                confirmpwAccount = "인증 계정"
 
                 stations = ["신림역", "수원역", "홍대입구역", "서울대입구역", "건대입구역"]
                 rndstations = random.choice(stations)
@@ -161,9 +161,9 @@ class detail_oneroomTest(unittest.TestCase):
 
                 dt = datetime.datetime.now().hour
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "phone"))).send_keys("01076883453")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "phone"))).send_keys("테스트 휴대폰 번호")
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "comment"))).send_keys(u"WWW_Test Automation_강연신(1)")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "comment"))).send_keys(u"테스트 문자 내용")
 
                 if (dt > 22 or dt < 8):
 
@@ -231,9 +231,9 @@ class detail_oneroomTest(unittest.TestCase):
 
                 if (dt2 > 22 or dt2 < 8):
 
-                    self.wait.until(EC.visibility_of_element_located((By.ID, "phone3"))).send_keys("01076883453")
+                    self.wait.until(EC.visibility_of_element_located((By.ID, "phone3"))).send_keys("테스트 휴대폰 번호")
 
-                    self.wait.until(EC.visibility_of_element_located((By.ID, "comment3"))).send_keys(u"WWW_Test Automation_강연신(1)")
+                    self.wait.until(EC.visibility_of_element_located((By.ID, "comment3"))).send_keys(u"테스트 문자 내용")
 
                     self.wait.until(EC.visibility_of_element_located((By.ID, "btn-inquiry3"))).click()
 
@@ -251,9 +251,9 @@ class detail_oneroomTest(unittest.TestCase):
 
                 else:
 
-                    self.wait.until(EC.visibility_of_element_located((By.ID, "phone2"))).send_keys("01076883453")
+                    self.wait.until(EC.visibility_of_element_located((By.ID, "phone2"))).send_keys("테스트 휴대폰 번호")
 
-                    self.wait.until(EC.visibility_of_element_located((By.ID, "comment2"))).send_keys(u"WWW_Test Automation_강연신(1)")
+                    self.wait.until(EC.visibility_of_element_located((By.ID, "comment2"))).send_keys(u"테스트 문자 내용")
 
                     self.wait.until(EC.visibility_of_element_located((By.ID, "btn-inquiry2"))).click()
 

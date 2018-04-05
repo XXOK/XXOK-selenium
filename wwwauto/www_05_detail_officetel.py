@@ -43,8 +43,8 @@ class detail_officetelTest(unittest.TestCase):
             try:
                 zigbangUrl = "https://www.zigbang.com/"
 
-                confirmAccount = "dustls456@naver.com"
-                confirmpwAccount = "asd12345@"
+                confirmAccount = "인증 계정"
+                confirmpwAccount = "인증 계정"
 
                 # 0. 직방 웹페이지 접속
 
@@ -78,14 +78,14 @@ class detail_officetelTest(unittest.TestCase):
 
                 # 3. 오피스텔 지도 화면 > 오피스텔 검색
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "officetel-textfield"))).send_keys(u"강남역센트럴푸르지오시티")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "officetel-textfield"))).send_keys(u"테스트할 오피스텔 명")
                 time.sleep(1)
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "btn-officetel-search"))).click()
                 time.sleep(3)
 
                 buildingName = self.wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, ".list-title > h3")))[0].text[0:12]
-                if not u"강남역센트럴푸르지오시티" == buildingName:
+                if not u"테스트할 오피스텔 명" == buildingName:
                     raise Exception(u"오피스텔이름이 일치하지 않습니다.", buildingName)
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "btn-officetel-delete"))).click()
@@ -155,7 +155,7 @@ class detail_officetelTest(unittest.TestCase):
                 #
                 # self.moveTab(1)
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "officetel-textfield"))).send_keys(u"직방테스트오피스텔")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "officetel-textfield"))).send_keys(u"테스트할 오피스텔 명")
                 time.sleep(1)
 
                 self.wait.until(EC.visibility_of_element_located((By.ID, "btn-officetel-search"))).click()
@@ -174,9 +174,9 @@ class detail_officetelTest(unittest.TestCase):
 
                 dt = datetime.datetime.now().hour
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "phone"))).send_keys("01076883453")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "phone"))).send_keys("테스트 휴대폰 번호")
 
-                self.wait.until(EC.visibility_of_element_located((By.ID, "comment"))).send_keys(u"WWW_Test Automation_강연신(1)")
+                self.wait.until(EC.visibility_of_element_located((By.ID, "comment"))).send_keys(u"테스트 문자 내용")
 
                 if (dt > 22 or dt < 8):
 
@@ -244,9 +244,9 @@ class detail_officetelTest(unittest.TestCase):
 
                 if (dt2 > 22 or dt2 < 8):
 
-                    self.wait.until(EC.visibility_of_element_located((By.ID, "phone3"))).send_keys("01076883453")
+                    self.wait.until(EC.visibility_of_element_located((By.ID, "phone3"))).send_keys("테스트 휴대폰 번호")
 
-                    self.wait.until(EC.visibility_of_element_located((By.ID, "comment3"))).send_keys(u"WWW_Test Automation_강연신(1)")
+                    self.wait.until(EC.visibility_of_element_located((By.ID, "comment3"))).send_keys(u"테스트 문자 내용")
 
                     self.wait.until(EC.visibility_of_element_located((By.ID, "btn-inquiry3"))).click()
 
@@ -264,9 +264,9 @@ class detail_officetelTest(unittest.TestCase):
 
                 else:
 
-                    self.wait.until(EC.visibility_of_element_located((By.ID, "phone2"))).send_keys("01076883453")
+                    self.wait.until(EC.visibility_of_element_located((By.ID, "phone2"))).send_keys("테스트 휴대폰 번호")
 
-                    self.wait.until(EC.visibility_of_element_located((By.ID, "comment2"))).send_keys(u"WWW_Test Automation_강연신(1)")
+                    self.wait.until(EC.visibility_of_element_located((By.ID, "comment2"))).send_keys(u"테스트 문자 내용")
 
                     self.wait.until(EC.visibility_of_element_located((By.ID, "btn-inquiry2"))).click()
 
