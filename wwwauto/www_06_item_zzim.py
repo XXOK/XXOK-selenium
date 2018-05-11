@@ -10,7 +10,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains
-from wwwauto.helper import helper
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -34,7 +33,6 @@ class item_zzimTest(unittest.TestCase):
             self.chromeDriver = PATH('../drivers/win/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver)
         self.wait = WebDriverWait(self.driver, 5)
-        self.helper = helper(self)
 
     def runTest(self):
         count = 0
@@ -86,27 +84,15 @@ class item_zzimTest(unittest.TestCase):
                 if not int(zzimList) == int(zzimReplace):
                     raise Exception("찜 개수가 상이함으로 자동화를 종료합니다.", "찜 리스트 : ", int(zzimList), "찜 개수 표시 : ", int(zzimReplace))
 
-                # 5. 전체 선택 및 전체 해제 (삭제)
+                # 4. 찜 전체 선택
 
                 self.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "allcheck_btn1"))).click()
 
-                # self.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "allclear_btn1"))).click()
-
-                # # 6. 매물 선택 후 찜 삭제
-                #
-                # self.wait.until(EC.visibility_of_all_elements_located((By.NAME, "check")))[0].click()
+                # 5. 찜 전체 삭제
 
                 self.wait.until(EC.visibility_of_element_located((By.LINK_TEXT, u"삭제"))).click()
 
                 self.wait.until(EC.alert_is_present()).accept()
-
-                # zzimList = len(self.wait.until(EC.visibility_of_all_elements_located((By.CLASS_NAME, "list-item"))))
-                #
-                # zzimCount = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".page-title > span"))).text
-                # zzimReplace = zzimCount.replace("(", "").replace(")", "")
-                #
-                # if not int(zzimList) == int(zzimReplace):
-                #     raise Exception("찜 개수가 상이함으로 자동화를 종료합니다.", "찜 리스트 : ", int(zzimList), "찜 개수 표시 : ", int(zzimReplace))
 
                 break
 
@@ -116,7 +102,6 @@ class item_zzimTest(unittest.TestCase):
                     raise
 
                 else:
-                    helper.screen_capture(self.helper)
                     traceback.print_exc(file=sys.stdout)
                     print("에러 발생 페이지 URL : ", self.driver.current_url)
                     self.driver.quit()

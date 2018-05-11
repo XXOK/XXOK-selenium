@@ -9,7 +9,6 @@ import platform
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from wwwauto.helper import helper
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -33,7 +32,6 @@ class apart_detail_aptTest(unittest.TestCase):
             self.chromeDriver = PATH('../drivers/win/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver)
         self.wait = WebDriverWait(self.driver, 5)
-        self.helper = helper(self)
 
     def runTest(self):
         count = 0
