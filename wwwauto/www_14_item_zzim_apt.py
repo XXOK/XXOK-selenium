@@ -27,7 +27,7 @@ class item_zzim_aptTest(unittest.TestCase):
         return time.sleep(2)
 
     def setUp(self):
-        self.chromeDriver = PATH('../drivers/mac/chromedriver')
+        self.chromeDriver = PATH('../drivers/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver)
         self.wait = WebDriverWait(self.driver, 5)
 

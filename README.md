@@ -25,7 +25,7 @@ https://www.python.org/downloads/
 
 #### ∙ Chromedriver
 
-https://chromedriver.storage.googleapis.com/index.html (latest version)
+https://chromedriver.storage.googleapis.com/index.html (LATEST_RELEASE 확인)
 
 PATH : `/Users/{사용자명}/Selenium_automation/drivers` (mac OS)
 
