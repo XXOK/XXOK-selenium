@@ -27,10 +27,7 @@ class item_zzim_aptTest(unittest.TestCase):
         return time.sleep(2)
 
     def setUp(self):
-        if platform.system() == 'Darwin' :
-            self.chromeDriver = PATH('../drivers/mac/chromedriver')
-        else :
-            self.chromeDriver = PATH('../drivers/win/chromedriver')
+        self.chromeDriver = PATH('../drivers/mac/chromedriver')
         self.driver = webdriver.Chrome(executable_path=self.chromeDriver)
         self.wait = WebDriverWait(self.driver, 5)
 
