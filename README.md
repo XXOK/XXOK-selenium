@@ -57,3 +57,7 @@ $ pip install -r requirements.txt
 ```python
 $ pytest -v -s wwwauto/
 ```
+
+## Reference
+#### WebDriver를 이용한 UI 테스트
+http://wiki.gurubee.net/pages/viewpage.action?pageId=6259762#Selenium%EC%9D%84%EC%9D%B4%EC%9A%A9%ED%95%9CUI%ED%85%8C%EC%8A%A4%ED%8A%B8-4.WebDriver%EB%A5%BC%EC%9D%B4%EC%9A%A9%ED%95%9CUI%ED%85%8C%EC%8A%A4%ED%8A%B8
